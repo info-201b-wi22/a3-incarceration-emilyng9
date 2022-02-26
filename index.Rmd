@@ -1,71 +1,40 @@
 ---
-title: "A3: Incarceration"
+title: "Why is there a big difference between genders in Juvenile Jail Population?"
 output: html_document
 ---
 
 ### Introduction
 
-An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
+As in society of where we are living right now, adult crimes are increasing from year to year and we can see that very common on news. But what about youth committing crimes all over the United States? This analysis will focus on the population between different genders in Juvenile Jail. The variables that will be used inside this research are female and male juvenile jail population, year, and state. The reason behind choosing these variables is because I want to explore is there an increasing trend in the population of men in Juvenile prison 
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+- In what year did the U.S have the highest male Juvenile population?
+- What is the total female Juvenile population in the U.S by the recent date?
+- Which state has the lowest juvenile population for males?
+- What is the total male Juvenile population in the U.S by the recent date?
+- In what year did the U.S have the highest female Juvenile population?
 
-These will likely be calculated using your DPLYR skills, answering questions such as: 
-
-- What is the average value of my variable across all the counties (in the current year)?
-- Where is my variable the highest / lowest?
-- How much has my variable change over the last N years?
-
-Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
+My analysis reflected on the population of female and male Juvenile population in the U.S fromo 1970 to 2018. First when we look at **`highest_male_juvenile_population`** or which year the U.S have the highest male. We get the result of 1993 and the reason behind it might be from the the Juvenile Justice System in which benefit the kids who committed crimes. By taking a closer look at the total female Juvenile population and male in the U.S in 2018 the difference was 3000 juveniles. According to the **`state_lowest_juvenile_male_pop`**, Alabama was the state with the lowest male juveniles populatio, this might be understandable because the law at this state can be lenient towards teenager and protected them from those crime. The last variable was the year which U.S have the highest female Juvenile population. The result suggested that male teenager already commited crime at an earlier age than female teenager.      
 
 ### The Dataset
 
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
+This dataset was created by Vera (Institute of Justice) and information was gathered by the Bureau of Justice Statistics (BJS). It was collected by state departments of correction, the Census of Jails (COJ), Annual Survey of Jails (ASJ). The ASJ, which covers a lot of large jails, has been conducting non-census years since 1982. On the other hand, the COJ has been collecting data on every county since 1970. The data was collected to announce make an emphasis to the public, encourage research, remake the justice policy, and have a better understanding of mass incarceration. There are about 153811 rows and 121 columns in the data. I want to know if there is a bias in the jail population of different races. The first problem to be noted about this data is the amount of NA, making it harder for the one analyzing it to allude out the accurate result. This problem might not be serious to others but to some, they will find this data has too many variables and does not know what to focus on. This data also did not include all genders besides females and males which can cause gender-inclusive problems. After seeing the high contrast in different race jail populations, this can lead to racial issues as in making wrong assumptions of a race based on the jail population.
 
 
-### Trends Over Time Chart
+### Male and Female Juveniles Population Overtime Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+This chart illustrates the difference in female and male juveniles population overtime from 1970-2018. As you can see from the chart, the number of male juveniles are way over the number of female juveniles. Female juveniles do not exceed half of the male's number. I choose to plot these data on a bar chart to show the big difference in genders for the juveniles population. 
 
-The first chart that you will create and include will show the trend over time of your variable/topic. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
 
-- Show more than one, but fewer than ~10 trends
-  - This may mean showing the same measure for different locations or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
+### The juveniles population for both males and females in WY Chart
 
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
+This chart illustrates the juveniles population for both males and females in Wyoming. As you can see from the chart, the number of male juveniles again are way over the number of female juveniles. The reason why I chose Wyoming state because while looking at the incarceration trends data, male and female had a quite similar number of juveniles ppopulation. However when it is plot into a chart, the numbers were too distinct apart, which makes it is easier to see the trend.  
 
-Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+### Map of Female Juveniles Population in 2018
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("Chart_3_Female_Juveniles_Population.R")}
 ```
 
-### Variable Comparison Chart
-
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The second chart that you will create and include will show how two different (continuous) variables are related to one another. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
-
-### Map
-
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The last chart that you will create and include will show how a variable is distributed geographically. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Your map needs a title
-- Your color scale needs a legend with a clear label
-- Use a map based coordinate system to set the aspect ratio of your map
-- Use a minimalist theme for the map 
+Since there was a very low number in female juveniles Population, I want to know which state has the highest number of female juvenial population. It was interesting to see compared to the highest number of male juvenial population which occurred in every state. The state map shown above stated that there were only three out of 50 states who has female teenagers committing crimes in 2018. There were also five other states however the numbers weren't that significant as New Carolina, Texas, and New York. According to Annie & Cassie Foundation, the Juvenile Justice Reform Act of 2018, this act bands teenagers from entering adult facilities (The Annie E. Casey Foundation, 2018). This might be the reason why teenagers during that time felt risky or challenging to perform crime acts. 
