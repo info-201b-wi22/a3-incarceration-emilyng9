@@ -24,10 +24,16 @@ This dataset was created by Vera (Institute of Justice) and information was gath
 
 ### Male and Female Juveniles Population Overtime Chart
 
+```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("Chart_1_Genders_Juveniles_Population_Overtime.R")}
+```
+
 This chart illustrates the difference in female and male juveniles population overtime from 1970-2018. As you can see from the chart, the number of male juveniles are way over the number of female juveniles. Female juveniles do not exceed half of the male's number. I choose to plot these data on a bar chart to show the big difference in genders for the juveniles population. 
 
 
 ### The juveniles population for both males and females in WY Chart
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("Chart_2_The_Total_Juveniles_Population_for_Male_and_Female_in_Wyoming.R")}
+```
 
 This chart illustrates the juveniles population for both males and females in Wyoming. As you can see from the chart, the number of male juveniles again are way over the number of female juveniles. The reason why I chose Wyoming state because while looking at the incarceration trends data, male and female had a quite similar number of juveniles ppopulation. However when it is plot into a chart, the numbers were too distinct apart, which makes it is easier to see the trend.  
 

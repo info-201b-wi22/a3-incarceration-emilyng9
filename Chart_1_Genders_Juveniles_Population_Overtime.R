@@ -5,18 +5,24 @@ library(plotly)
 
 incarceration_trends <- read.csv("https://raw.githubusercontent.com/vera-institute/incarceration-trends/master/incarceration_trends.csv")
 
-
-genders_juvenile_jail <- incarceration_trends %>% 
-  select(year, male_juvenile_jail_pop, female_juvenile_jail_pop) %>%
-  pivot_longer(!year, names_to = "Gender", values_to = "Population")
-
-genders_juveniles_pris_pop <- incarceration_trends %>% 
+total_male_juvenile <- incarceration_trends %>% 
   group_by(year) %>% 
-  select(year, female_juvenile_jail_pop, male_juvenile_jail_pop)
+  summarize(male_juvenile = sum(male_juvenile_jail_pop, na.rm = T))
 
-genders_juvenile_overtime <- ggplot(genders_juveniles_pris_pop) +
-  geom_col(mapping = aes(x = year, y = population, fill = gender)) +
-  labs(title = "Male and Female Juveniles Population Overtime", x = "Year", y = "Population", color = "population of different genders") +
-  theme(legend.position = "right")
-ggplotly(genders_juvenile_overtime)
+total_female_juvenile <- incarceration_trends %>% 
+  group_by(year) %>% 
+  summarize(female_juvenile = sum(female_juvenile_jail_pop, na.rm = T))
+
+sum_female_male_juvenile <- left_join(total_male_juvenile, total_female_juvenile, by = "year") %>%
+  pivot_longer(col= c("male_juvenile", "female_juvenile"),
+               names_to = "genders")
+
+ggplot(sum_female_male_juvenile) +
+  geom_line(aes(x = year, y = value, group = genders, color = genders)) +
+  ylab("Number of Female and Male Juveniles") +
+  xlab("Year") +
+  labs(title = "Female and Male Juveniles Population Overtime")
+  
+  
+  
   
