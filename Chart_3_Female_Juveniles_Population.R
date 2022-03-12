@@ -29,9 +29,18 @@ state_shape <- left_join(state_shape, female_juveniles_pris_pop, by = 'region')
 
 female_juveniles_pop_2018 <- ggplot(data = state_shape) +
 geom_polygon(mapping = aes(x = long, y = lat, fill = total_female_juveniles, group = group), color = "white") +
+  theme(axis.line = element_blank(),
+axis.text = element_blank(),
+axis.ticks = element_blank(),
+axis.title = element_blank(),
+plot.background = element_blank(),
+panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(),
+panel.border = element_blank()) +
 labs(title = "Female Juveniles Population in 2018", fill = 'Female') +
   scale_fill_continuous(low = 'pink', high = 'purple', labels = scales::label_number_si()) +
-coord_map() 
+  labs(fill="Number of Female Juveniles")
+coord_map()
 
 ggplotly(female_juveniles_pop_2018)
 

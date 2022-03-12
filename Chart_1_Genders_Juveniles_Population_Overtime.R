@@ -15,13 +15,14 @@ total_female_juvenile <- incarceration_trends %>%
 
 sum_female_male_juvenile <- left_join(total_male_juvenile, total_female_juvenile, by = "year") %>%
   pivot_longer(col= c("male_juvenile", "female_juvenile"),
-               names_to = "genders")
+               names_to = "Genders")
 
 ggplot(sum_female_male_juvenile) +
-  geom_line(aes(x = year, y = value, group = genders, color = genders)) +
+  geom_line(aes(x = year, y = value, group = Genders, color = Genders)) +
   ylab("Number of Female and Male Juveniles") +
   xlab("Year") +
-  labs(title = "Female and Male Juveniles Population Overtime")
+  labs(title = "Female and Male Juveniles Population Overtime") +
+  scale_color_hue(labels = c("Female Juvenile", "Male Juvenile"))
   
   
   

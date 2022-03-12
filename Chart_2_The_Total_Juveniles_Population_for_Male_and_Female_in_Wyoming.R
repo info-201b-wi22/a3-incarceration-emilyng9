@@ -17,14 +17,15 @@ female_juveniles_WY <- incarceration_trends %>%
 
 female_male_juveniles_WY <- left_join(male_juveniles_WY, female_juveniles_WY, by = "state") %>%
   pivot_longer(col= c("male_juvenile", "female_juvenile"),
-               names_to = "genders") 
+               names_to = "Genders") 
 
 ggplot(female_male_juveniles_WY) +
-  geom_col(aes(x = genders, y = value, group = genders, color = genders)) +
+  geom_col(aes(x = Genders, y = value, group = Genders, color = Genders)) +
 ylab("Population") +
   scale_fill_brewer(palette = "Pastel1") +
   xlab("Female and Male Juveniles") +
-  labs(title = "The Juveniles Population for Male and Female in Wyoming")
+  labs(title = "The Juveniles Population for Male and Female in Wyoming") +
+  scale_color_hue(labels = c("Female Juvenile", "Male Juvenile"))
 
 
   

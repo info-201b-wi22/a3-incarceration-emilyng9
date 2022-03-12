@@ -9,13 +9,18 @@ As in society of where we are living right now, adult crimes are increasing from
 
 ### Summary Information
 
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+source('summary.R')
+```
+
 - In what year did the U.S have the highest male Juvenile population?
 - What is the total female Juvenile population in the U.S by the recent date?
 - Which state has the lowest juvenile population for males?
 - What is the total male Juvenile population in the U.S by the recent date?
 - In what year did the U.S have the highest female Juvenile population?
 
-My analysis reflected on the population of female and male Juvenile population in the U.S fromo 1970 to 2018. First when we look at **`highest_male_juvenile_population`** or which year the U.S have the highest male. We get the result of 1993 and the reason behind it might be from the the Juvenile Justice System in which benefit the kids who committed crimes. By taking a closer look at the total female Juvenile population and male in the U.S in 2018 the difference was 3000 juveniles. According to the **`state_lowest_juvenile_male_pop`**, Alabama was the state with the lowest male juveniles populatio, this might be understandable because the law at this state can be lenient towards teenager and protected them from those crime. The last variable was the year which U.S have the highest female Juvenile population. The result suggested that male teenager already commited crime at an earlier age than female teenager.      
+My analysis reflected on the population of female and male Juvenile population in the U.S fromo 1970 to 2018. First when we look at **`highest male juvenile population`** or which year the U.S have the highest male. We get the result of `r summary_source$highest_male_juvenile_population` and the reason behind it might be from the the Juvenile Justice System in which benefit the kids who committed crimes. By taking a closer look at the total female Juvenile population and male in the U.S in 2018 (`r summary_source$recent_female_juvenile_pop` and `r summary_source$recent_male_juvenile_pop`) the difference was 3000 juveniles. According to the **`state lowest juvenile male pop`**, Alabama was the state with the lowest male juveniles populatio, this might be understandable because the law at this state can be lenient towards teenager and protected them from those crime. The last variable was the year which U.S have the highest female Juvenile population which is `r summary_source$highest_female_juvenile_population`. The result suggested that male teenager already commited crime at an earlier age than female teenager.      
 
 ### The Dataset
 
